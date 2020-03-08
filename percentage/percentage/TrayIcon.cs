@@ -85,7 +85,7 @@ namespace percentage
                 // create a brush for the text
                 using (Brush textBrush = new SolidBrush(textColor))
                 {
-                    graphics.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+                    graphics.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
                     graphics.DrawString(text, font, textBrush, 0, 0);
                     graphics.Save();
                 }
@@ -96,7 +96,7 @@ namespace percentage
 
         private static SizeF GetImageSize(string text, Font font)
         {
-            using (Image image = new Bitmap(1, 1))
+            using (Image image = new Bitmap(20, 20))
             using (Graphics graphics = Graphics.FromImage(image))
                 return graphics.MeasureString(text, font);
         }
